@@ -1,0 +1,212 @@
+@import "./variables.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  background: var(--color-secondary);
+  font-family: var(--font-default);
+  font-size: var(--fontsize-17);
+
+  @media (min-width: 768px) {
+    font-size: var(--fontsize-18);
+  }
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-16);
+  min-height: 100vh;
+}
+
+button,
+label,
+input,
+a,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary-dark);
+}
+
+.link {
+  font-family: var(--font-default);
+  font-weight: var(--fontweight-thin);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 0.5px;
+}
+
+/* Typography */
+h1 {
+  font-family: var(--font-headings);
+  font-size: var(--fontsize-20);
+  font-weight: var(--fontweight-normal);
+  color: var(--color-primary-dark);
+
+  @media (min-width: 768px) {
+    font-size: var(--fontsize-35);
+  }
+}
+
+h2,
+p,
+label {
+  font-weight: var(--fontweight-thin);
+}
+
+h2 {
+  font-size: var(--fontsize-17);
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-weight: var(--fontweight-thin);
+  transition: all 0.3s ease-in-out;
+}
+
+.primary-btn {
+  border-radius: 5px;
+  border: none;
+  background: var(--dark-pink, #7a1f31);
+  display: inline-flex;
+  padding: 12px 24px;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-white);
+}
+
+.btn-main {
+  padding: var(--spacing-4) var(--spacing-8);
+  border: solid 0.5px transparent;
+  background-color: var(--color-primary-dark);
+  color: var(--color-secondary);
+}
+
+.btn-main:hover {
+  background: var(--color-primary);
+  border: solid 0.5px var(--color-dark-gray);
+  color: var(--color-primary-dark);
+}
+
+/* Secondary button */
+.btn-secondary {
+  padding: var(--spacing-4) var(--spacing-8);
+  background: var(--color-primary);
+  border: solid 0.5px var(--color-dark-gray);
+  color: var(--color-primary-dark);
+}
+
+.btn-secondary:hover {
+  border: solid 0.5px transparent;
+  background-color: var(--color-primary-dark);
+  color: var(--color-secondary);
+}
+
+.btn-main:disabled {
+  opacity: 50%;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Form Styling */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: var(--spacing-8) var(--spacing-4);
+  color: var(--color-primary-dark);
+  border: 0.5px solid var(--color-gray);
+  margin-bottom: var(--spacing-8);
+}
+
+input:hover {
+  background: var(--color-secondary);
+  border: 0.5px solid var(--color-gray);
+}
+
+input:focus,
+textarea:focus {
+  background: var(--color-secondary);
+  border: 0.5px solid var(--color-primary-dark);
+}
+
+.input-error {
+  border: 1px solid var(--color-red);
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 300px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-24);
+}
+
+/* Footer */
+footer {
+  text-align: left;
+  padding: var(--spacing-24);
+  margin-top: var(--spacing-32);
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+/* Error and success */
+.success-text {
+  color: var(--color-success);
+}
+
+.error-text {
+  color: var(--color-error);
+}
+
+.section-welcome-page {
+  padding-top: 200px;
+  text-align: center;
+  font-size: var(--fontsize-20);
+}
+
+.welcome-text {
+  font-size: var(--fontsize-35);
+  margin-bottom: 50px;
+}

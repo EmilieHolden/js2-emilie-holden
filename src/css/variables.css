@@ -1,0 +1,31 @@
+:root {
+  /* Colors */
+  --color-primary-dark: #7a1f31;
+  --color-secondary: #ffc9d5;
+  --color-white: #fff;
+  --color-dark-grey: #1e1e1e;
+  --color-success: #5c8746;
+  --color-error: #d51d1d;
+
+  /* Font family */
+  --font-default: "Quicksand", sans-serif;
+  --font-headings: "Modak", system-ui;
+
+  /* Font sizes */
+  --fontsize-15: 15px;
+  --fontsize-17: 17px;
+  --fontsize-20: 20px;
+  --fontsize-35: 35px;
+
+  /* Font weight */
+  --fontweight-thin: 300;
+  --fontweight-normal: 400;
+
+  /* Spacing scale */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+}
