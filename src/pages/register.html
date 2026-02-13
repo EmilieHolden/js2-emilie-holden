@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Modak&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/9cf112f2f4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/js/script.js"></script>
+    <link rel="stylesheet" href="/src/css/global.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strawberry - Register your account.</title>
+  </head>
+  <body>
+    <header>
+      <h1>STRAWBERRY</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/login.html" aria-label="Log in"
+              >Log in <i class="fa-regular fa-user"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/register.html" aria-label="Register account"
+              >Register account</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Register account</h2>
+      <form id="register-form" novalidate>
+        <div class="form-spacing">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-spacing">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-spacing">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="8"
+            required
+          />
+        </div>
+        <div class="form-spacing">
+          <label for="bio">Bio</label>
+          <textarea name="bio" id="bio" maxlength="160"></textarea>
+        </div>
+        <div class="form-spacing">
+          <label for="avatarImgUrl">Avatar Photo URL</label>
+          <input type="url" id="avatarImgUrl" name="avatarImgUrl" />
+        </div>
+        <button class="primary-btn form-spacing" type="submit">
+          Create account
+        </button>
+      </form>
+      <p id="register-message"></p>
+      <a class="link" href="/src/pages/login.html">Log in</a>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="/register.html">Register account</a></li>
+          <li><a href="/login.html">Log in</a></li>
+        </ul>
+      </nav>
+      <i class="fa-brands fa-square-facebook"></i>
+      <i class="fa-brands fa-square-instagram"></i>
+    </footer>
+  </body>
+</html>

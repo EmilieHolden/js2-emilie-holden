@@ -1,4 +1,5 @@
 @import "./variables.css";
+@import "./feed.css";
 
 * {
   box-sizing: border-box;
@@ -81,13 +82,14 @@ h1 {
 }
 
 h2,
-p,
-label {
+p {
   font-weight: var(--fontweight-thin);
 }
 
 h2 {
-  font-size: var(--fontsize-17);
+  font-size: var(--fontsize-20);
+  font-weight: 600;
+  color: var(--color-primary-dark);
 }
 
 /* Buttons */
@@ -142,29 +144,39 @@ button {
 }
 
 /* Form Styling */
+.form-spacing {
+  margin-top: 12px;
+}
+
+label {
+  color: var(--color-primary-dark);
+}
+
 input,
 textarea,
 select {
   width: 100%;
-  padding: var(--spacing-8) var(--spacing-4);
-  color: var(--color-primary-dark);
-  border: 0.5px solid var(--color-gray);
-  margin-bottom: var(--spacing-8);
+  display: inline-flex;
+  padding: 8px 12px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 5px;
+  border: 0.5px solid #585858;
 }
 
 input:hover {
-  background: var(--color-secondary);
-  border: 0.5px solid var(--color-gray);
+  border-radius: 5px;
+  border: 1px solid var(--color-primary-dark);
 }
 
 input:focus,
 textarea:focus {
-  background: var(--color-secondary);
-  border: 0.5px solid var(--color-primary-dark);
+  border-radius: 5px;
+  border: 1.5px solid var(--color-primary-dark);
 }
 
 .input-error {
-  border: 1px solid var(--color-red);
+  border: 1px solid var(--color-error);
 }
 
 /* Header */
