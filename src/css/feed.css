@@ -1,0 +1,58 @@
+.feed-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.card,
+.post-image-container,
+.card-image,
+.post-body-container {
+  border-radius: 5px;
+}
+
+.card {
+  width: 500px;
+  height: fit-content;
+  background: var(--color-primary-dark);
+  padding: var(--spacing-16);
+}
+
+.post-image-container {
+  width: 470px;
+  height: 290px;
+  background: var(--color-white);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.post-body-container {
+  background: var(--color-white);
+  padding: var(--spacing-8);
+  margin-top: var(--spacing-8);
+}
+
+.post-body {
+  color: var(--color-dark-grey);
+}
+
+.post-user,
+.post-date {
+  color: var(--color-white);
+}
+
+.post-user {
+  font-weight: 500;
+  margin-top: var(--spacing-8);
+}
+
+#load-more-btn {
+  display: block;
+  margin: var(--spacing-16) auto;
+}
