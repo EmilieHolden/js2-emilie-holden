@@ -1,5 +1,15 @@
 import { defineConfig } from "vite"
 
 export default defineConfig({
-    base: './'
+    base: './',
+    build: {
+        rollupOptions: {
+            input: {
+                main: 'index.html',
+                register: 'src/pages/register.html',
+                login: 'src/pages/login.html',
+                feed: 'src/pages/feed.html',
+            }
+        }
+    }
 })
