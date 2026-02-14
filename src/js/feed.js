@@ -62,14 +62,16 @@ async function fetchAndCreatePosts(page = 1) {
     } finally {
         isFetching = false
     }
+
+    loadMoreButton.addEventListener("click", () => {
+        if (isFetching) return;
+        fetchAndCreatePosts(currentPage);
+    });
+
 }
 
 fetchAndCreatePosts()
 
-loadMoreButton.addEventListener("click", () => {
-    if (isFetching) return;
-    fetchAndCreatePosts(currentPage);
-});
 
 
 
