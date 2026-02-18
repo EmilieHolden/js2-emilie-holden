@@ -58,8 +58,8 @@ function renderLoggedOutView() {
 
 function renderLoggedInView() {
     loginMainContainer.innerHTML = `
-        <h1>You are logged in</h1>
-        <button class="btn-main" id="logout-btn">Log out</button>
+        <h2>You are logged in</h2>
+        <button class="primary-btn" id="logout-btn">Log out</button>
     `;
 
     const logOutBtn = document.getElementById("logout-btn");
