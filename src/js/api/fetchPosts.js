@@ -1,7 +1,7 @@
 import { options } from "./index.js"
 
 export async function getPosts(page = 1, limit = 10) {
-    const API_URL = `https://v2.api.noroff.dev/social/posts?page=${page}&limit=${limit}`
+    const API_URL = `https://v2.api.noroff.dev/social/posts?page=${page}&limit=${limit}&_author=true`
 
     try {
         const response = await fetch(API_URL, options)
@@ -18,7 +18,7 @@ export async function getPosts(page = 1, limit = 10) {
 }
 
 export async function getPost(id) {
-    const API_URL = `https://v2.api.noroff.dev/social/posts/${id}`
+    const API_URL = `https://v2.api.noroff.dev/social/posts/${id}&_author=true`
 
     try {
         const response = await fetch(API_URL)
