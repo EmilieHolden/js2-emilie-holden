@@ -39,7 +39,29 @@ export function validateForm(form) {
 
             input.insertAdjacentElement("beforebegin", errorMessage);
         }
-    });
+        // Custom title message
+        if (input.name === "title" && input.value.trim().length === 0) {
+            valid = false;
+            input.classList.add("input-error");
+
+            const errorMessage = document.createElement("p");
+            errorMessage.classList.add("error-text");
+            errorMessage.textContent = "Title is required."
+            input.insertAdjacentElement("beforebegin", errorMessage);
+            return;
+        } if (input.name === "title" && input.value.trim().length > 1) {
+            valid = true;
+
+            const errorMessage = document.createElement("p")
+            errorMessage.textContent = "Post is published."
+            errorMessage.classList.add("success-text")
+
+            input.insertAdjacentElement("beforebegin", errorMessage);
+            return;
+        }
+
+    })
 
     return valid;
+
 }
