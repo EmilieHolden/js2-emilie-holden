@@ -1,10 +1,12 @@
-import { options } from "./index.js"
+import { BASE_URL, getHeaders } from "./index.js"
 
 export async function getProfiles() {
-    const API_URL = "https://v2.api.noroff.dev/social/profiles"
+    const API_URL = `${BASE_URL}/profiles`
 
     try {
-        const response = await fetch(API_URL, options)
+        const response = await fetch(API_URL, {
+            headers: getHeaders(),
+        })
 
         if (!response.ok)
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -17,10 +19,12 @@ export async function getProfiles() {
 }
 
 export async function getProfile(name) {
-    const API_URL = `https://v2.api.noroff.dev/social/profiles/${name}`
+    const API_URL = `${BASE_URL}/profiles/${name}`
 
     try {
-        const response = await fetch(API_URL)
+        const response = await fetch(API_URL, {
+            headers: getHeaders(),
+        })
 
         if (!response.ok)
             throw new Error(`HTTP error! Status: ${response.status}`);
