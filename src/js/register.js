@@ -56,6 +56,8 @@ if (registerForm) {
         } catch (error) {
             registerMessage.textContent = `Registration failed. ${error.message}`;
             registerMessage.classList.add("error-text")
+            console.error("Registration failed.");
+
         }
     })
 }

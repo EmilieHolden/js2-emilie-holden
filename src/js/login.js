@@ -51,6 +51,7 @@ function renderLoggedOutView() {
             } catch (error) {
                 loginMessage.textContent = `Login failed. ${error.message}`;
                 loginMessage.classList.add("error-text")
+                console.error("Login failed.", err);
             }
         });
     }
