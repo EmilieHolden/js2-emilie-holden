@@ -1,10 +1,32 @@
-import { options } from "./index.js"
+import { BASE_URL, getHeaders } from "./index.js"
 
 export async function getPosts(page = 1, limit = 10) {
-    const API_URL = `https://v2.api.noroff.dev/social/posts?page=${page}&limit=${limit}&_author=true`
+    const API_URL = `${BASE_URL}/posts?page=${page}&limit=${limit}&_author=true&_count=true`
 
     try {
-        const response = await fetch(API_URL, options)
+        const response = await fetch(API_URL, {
+            headers: getHeaders(),
+        })
+
+        if (!response.ok)
+            throw new Error(`HTTP error! Status: ${response.status}`)
+
+        const data = await response.json()
+        return data;
+
+    } catch (error) {
+        throw error;
+    }
+}
+
+
+export async function searchPosts(query, page = 1, limit = 10) {
+    const API_URL = `${BASE_URL}/posts/search?q=${encodeURIComponent(query)}&page=${page}&limit=${limit}&_author=true&_count=true`
+
+    try {
+        const response = await fetch(API_URL, {
+            headers: getHeaders(),
+        })
 
         if (!response.ok)
             throw new Error(`HTTP error! Status: ${response.status}`)
@@ -18,10 +40,12 @@ export async function getPosts(page = 1, limit = 10) {
 }
 
 export async function getPost(id) {
-    const API_URL = `https://v2.api.noroff.dev/social/posts/${id}&_author=true`
+    const API_URL = `${BASE_URL}/posts/${id}&_author=true`
 
     try {
-        const response = await fetch(API_URL)
+        const response = await fetch(API_URL, {
+            headers: getHeaders(),
+        })
 
         if (!response.ok)
             throw new Error(`HTTP error! Status: ${response.status}`);
