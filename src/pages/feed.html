@@ -38,6 +38,23 @@
     </header>
     <main>
       <section>
+<div id="feed-top">
+          <form class="search-form" id="search-posts-form" role="search">
+            <label for="feedSearchInput">Search posts</label>
+            <div class="container_search_input-button">
+              <div class="input-icon">
+                <input type="search" id="feedSearchInput" autocomplete="off" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
+          </form>
+
+          <div class="container_open-add-post-btn">
+            <button type="button" id="open-add-post" class="primary-btn">
+              Add post
+            </button>
+          </div>
+        </div>
         <div class="feed-grid" id="container"></div>
         <button class="primary-btn" id="load-more-btn">Load More</button>
       </section>
