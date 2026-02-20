@@ -1,5 +1,6 @@
 @import "./variables.css";
 @import "./feed.css";
+@import "./profile.css";
 
 * {
   box-sizing: border-box;
