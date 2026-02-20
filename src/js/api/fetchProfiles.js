@@ -35,3 +35,22 @@ export async function getProfile(name) {
         throw error;
     }
 }
+
+export async function getProfilePosts(name) {
+    const API_URL = `${BASE_URL}/profiles/${name}/posts?_author=true&_count=true`
+
+    try {
+        const response = await fetch(API_URL, {
+            headers: getHeaders(),
+        })
+
+        if (!response.ok)
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        const data = await response.json()
+        return data;
+
+    } catch (error) {
+        throw error;
+
+    }
+}
