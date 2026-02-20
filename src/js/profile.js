@@ -1,4 +1,5 @@
 import { getProfile, getProfilePosts } from "./api/fetchProfiles";
+import { deletePost } from "./api/delete";
 
 const params = new URLSearchParams(window.location.search);
 const profileName = params.get("name");
@@ -91,10 +92,8 @@ async function loadProfilePage() {
 }
 
 // Render posts for specific profile by username
+const userPostsContainer = document.getElementById("user-posts-container")
 function renderUserPosts(posts) {
-    const userPostsContainer = document.getElementById("user-posts-container")
-
-
     if (!posts || posts.length === 0) {
         userPostsContainer.innerHTML += `<div>No posts found</div>`;
         return;
@@ -117,12 +116,21 @@ function renderUserPosts(posts) {
                   <p class="post-body post-body-title">${post.title ?? ""}</p>
                   <p class="post-body">${post.body ?? ""}</p>
                 </div>
+
+             ${loggedInUser.name === post.author.name
+                ? `<div class="edit-delete_post_btn">
+                <button class="secondary-btn" id="edit-post-btn">Edit post</button>
+                <button class="secondary-btn delete-post-btn" data-post-id="${post.id}">Delete post</button>
+                </div>`
+                : ""
+            }
               </div>
-            </div>
+            </div>  
           `
 
     });
 }
+
 async function loadProfilePagePosts() {
     if (!profileName) {
         console.error("Missing ?name= in the URL");
@@ -142,5 +150,25 @@ async function loadProfilePagePosts() {
 
 }
 
-loadProfilePagePosts()
-loadProfilePage()
+userPostsContainer.addEventListener("click", async (e) => {
+    const deleteBtn = e.target.closest(".delete-post-btn")
+
+    if (!deleteBtn) return;
+    const postId = deleteBtn.dataset.postId;
+
+    try {
+        await deletePost(postId);
+
+        // Re-render posts
+        await loadProfilePagePosts()
+
+        alert("Post is deleted");
+
+    } catch (error) {
+        console.error(error);
+        alert("Could not delete post. Please try again.");
+    }
+})
+
+await loadProfilePagePosts()
+await loadProfilePage()
