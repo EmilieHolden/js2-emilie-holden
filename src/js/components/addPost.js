@@ -20,8 +20,10 @@ export function addPostForm() {
         </div>
   
         <div>
+        <div class="add-post-cancel-btn-container">
           <button type="submit" class="primary-btn">Add post</button>
           <button type="button" class="primary-btn" id="cancel-add-post">Cancel</button>
+        </div>
         </div>
       </form>
     `;
