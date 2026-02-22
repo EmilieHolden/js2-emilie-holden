@@ -122,12 +122,13 @@
   z-index: 9999;
 }
 
-.add-post-cancel-btn-container {
-  text-align: right;
-}
-
 .add-post-form {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-16);
+}
+
+.edit-delete_post_btn {
+  margin-top: var(--spacing-8);
+  text-align: right;
 }
