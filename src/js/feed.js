@@ -17,7 +17,7 @@ if (!container || !button) {
         const postId = card.dataset.id;
         if (!postId) return;
 
-        window.location.href = `/src/pages/post.html?id=${encodeURIComponent(postId)}`;
+        window.location.href = `../../src/pages/post.html?id=${encodeURIComponent(postId)}`;
     });
 
     let currentPage = 1;
