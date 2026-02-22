@@ -8,6 +8,18 @@ const searchInput = document.getElementById("feedSearchInput");
 if (!container || !button) {
 
 } else {
+    container.addEventListener("click", (e) => {
+        if (e.target.closest("a, button")) return;
+
+        const card = e.target.closest(".card");
+        if (!card) return;
+
+        const postId = card.dataset.id;
+        if (!postId) return;
+
+        window.location.href = `/src/pages/post.html?id=${encodeURIComponent(postId)}`;
+    });
+
     let currentPage = 1;
     let isFetching = false;
 
@@ -24,7 +36,7 @@ if (!container || !button) {
 
         postsToRender.forEach((post) => {
             container.innerHTML += `
-            <div class="card">
+            <div class="card" data-id="${post.id}">
               <div class="post-image-container">
                 ${post.media?.url
                     ? `<img class="card-image" src="${post.media.url}" alt="${post.media.alt || "Post image"}">`
@@ -104,3 +116,4 @@ if (!container || !button) {
     setupPagination(button, () => isFetching, () => loadPostsPage(currentPage));
     loadPostsPage();
 }
+
