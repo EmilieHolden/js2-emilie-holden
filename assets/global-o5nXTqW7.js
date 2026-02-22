@@ -155,7 +155,7 @@
         </div>
   
         <div>
-        <div class="add-post-cancel-btn-container">
+        <div>
           <button type="submit" class="primary-btn">Add post</button>
           <button type="button" class="primary-btn" id="cancel-add-post">Cancel</button>
         </div>
