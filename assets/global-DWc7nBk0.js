@@ -8,7 +8,7 @@
             <button class="primary-btn form-spacing" type="submit" id="login-btn">Login</button>
         </form>
         <p id="login-message"></p>
-        <a class="link" href="/register.html">Register account</a>
+        <a class="link" href="../../register.html">Register account</a>
     `;const t=document.getElementById("login-form"),r=document.getElementById("login-message");t&&t.addEventListener("submit",async e=>{if(e.preventDefault(),!b(t))return;const o={email:document.getElementById("email").value.trim(),password:document.getElementById("password").value};let a=!1;try{a=!0,r.textContent="Logging in...";const n=await B(o);localStorage.setItem("token",n.data.accessToken),localStorage.setItem("user",JSON.stringify(n.data)),r.textContent="Login successful!",r.classList.add("success-text"),setTimeout(()=>{C(),window.location.href="/src/pages/feed.html"},1e3)}catch(n){r.textContent=`Login failed. ${n.message}`,r.classList.add("error-text"),console.error("Login failed.",err)}})}function C(){E.innerHTML=`
         <h2>You are logged in</h2>
         <button class="primary-btn" id="logout-btn">Log out</button>
