@@ -4,7 +4,7 @@ import { BASE_URL, getHeaders } from "./index.js"
  * Deletes a post by its id using API.
  * 
  * @param {} id - the id of the post to delete.
- * @returns - a success message for post deleted, and the post is removed from API.
+ * @returns - a success message for post deleted, and the post is removed from API. Returns an error if failed.
  * @example deletePost(123)
  * Post is deleted.
  */
