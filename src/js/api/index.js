@@ -11,3 +11,8 @@ export function getHeaders() {
         "Content-Type": "application/json"
     }
 }
+export const options = {
+    headers: {
+
+    }
+};
