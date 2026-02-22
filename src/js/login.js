@@ -46,7 +46,7 @@ function renderLoggedOutView() {
 
                 setTimeout(() => {
                     renderLoggedInView();
-                    window.location.href = "/src/pages/feed.html";
+                    window.location.href = "../../src/pages/feed.html";
                 }, 1000);
             } catch (error) {
                 loginMessage.textContent = `Login failed. ${error.message}`;
