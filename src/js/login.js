@@ -69,6 +69,7 @@ function renderLoggedInView() {
         logOutBtn.addEventListener("click", () => {
             logoutUser();
             renderLoggedOutView();
+            window.location.href = "/";
         });
     }
 }
