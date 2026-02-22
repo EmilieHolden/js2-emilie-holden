@@ -14,7 +14,7 @@ function renderLoggedOutView() {
             <button class="primary-btn form-spacing" type="submit" id="login-btn">Login</button>
         </form>
         <p id="login-message"></p>
-        <a class="link" href="/register.html">Register account</a>
+        <a class="link" href="../../register.html">Register account</a>
     `;
 
     const loginForm = document.getElementById("login-form");
