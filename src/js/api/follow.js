@@ -1,5 +1,12 @@
 import { BASE_URL, getHeaders } from "./index.js"
 
+/**
+ * Sends request to follow a user profile.
+ * @param {string} name - The name of the user to follow.
+ * @returns - Updated profile with follower. Returns an error message if failed.
+ * @example followProfile("emz")
+ * User is followed. 
+ */
 export const followProfile = async (name) => {
     const API_URL = `${BASE_URL}/profiles/${name}/follow`
 
