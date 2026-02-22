@@ -120,17 +120,11 @@ button,
   font-weight: var(--fontweight-thin);
 }
 
-.primary-btn:hover {
-}
-
 /* Secondary button */
 .secondary-btn {
   color: var(--color-primary-dark);
   background: var(--color-secondary);
   font-weight: var(--fontweight-normal);
-}
-
-.secondary-btn:hover {
 }
 
 /* Form Styling */
@@ -175,7 +169,6 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 30px 300px;
 }
 
 nav ul {
@@ -202,6 +195,7 @@ footer {
   color: var(--color-error);
 }
 
+/* Welcome text on landing page */
 .section-welcome-page {
   padding-top: 200px;
   text-align: center;
