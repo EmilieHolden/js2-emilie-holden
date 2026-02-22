@@ -1,19 +1,24 @@
-#feed-top {
-  width: 500px;
+.feed-container {
   margin: 0 auto;
-  margin-bottom: var(--spacing-16);
+  align-self: center;
 }
 
-.search-form {
+/* Search bar and add post button */
+.feed-top {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  width: 500px;
-  margin: 0 auto;
-  margin-bottom: var(--spacing-16);
-}
+  justify-content: space-between;
+  align-items: flex-end;
+  justify-self: center;
+  margin-bottom: var(--spacing-8);
+  gap: var(--spacing-8);
 
-.container_open-add-post-btn {
-  text-align: right;
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+}
+.search-form {
+  flex-grow: 1;
 }
 
 .input-icon {
@@ -28,10 +33,10 @@
   margin-top: 10px;
 }
 
+/* Feed display */
 .feed-grid {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   align-items: center;
 }
 
@@ -43,16 +48,20 @@
 }
 
 .card {
-  width: 500px;
+  width: 100%;
   height: fit-content;
   background: var(--color-primary-dark);
   padding: var(--spacing-16);
+  margin-bottom: var(--spacing-8);
+
+  @media (min-width: 768px) {
+    width: 500px;
+  }
 }
 
 .post-image-container {
-  width: 470px;
-  height: 290px;
-  background: var(--color-white);
+  width: 100%;
+  height: fit-content;
 }
 
 .card-image {
@@ -86,23 +95,35 @@
   margin-top: var(--spacing-8);
 }
 
-#load-more-btn {
+/* Load more button */
+.load-more-btn-container {
+  text-align: center;
+}
+.load-more-btn {
   display: block;
   margin: var(--spacing-16) auto;
 }
 
+/* Add post overlay */
 .add-post-form-overlay {
   background: var(--color-white);
   border: solid var(--color-white);
   border-radius: 5px;
   padding: var(--spacing-16);
-  width: 550px;
+  width: 300px;
   min-height: fit-content;
+  @media (min-width: 768px) {
+    width: 550px;
+  }
 
   position: fixed;
   inset: 0;
   margin: auto;
   z-index: 9999;
+}
+
+.add-post-cancel-btn-container {
+  text-align: right;
 }
 
 .add-post-form {
