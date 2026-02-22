@@ -9,6 +9,7 @@ export default defineConfig({
                 register: 'src/pages/register.html',
                 login: 'src/pages/login.html',
                 feed: 'src/pages/feed.html',
+                profile: 'src/pages/profile.html',
             }
         }
     }
