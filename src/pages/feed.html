@@ -19,26 +19,16 @@
       href="./favicon_strawberry/favicon-16x16.png"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Strawberry - Connect with your friends.</title>
-    <script type="module" crossorigin src="../../assets/global-DkH2O5Q1.js"></script>
-    <link rel="stylesheet" crossorigin href="../../assets/global-riSE66sm.css">
+    <meta name="description" content="View posts from all users." />
+    <title>Strawberry - View feed.</title>
+    <script type="module" crossorigin src="../../assets/global-BJkfUTMJ.js"></script>
+    <link rel="stylesheet" crossorigin href="../../assets/global-DHuEhSnw.css">
   </head>
   <body>
-    <header>
-      <h1><a href="/">STRAWBERRY</a></h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="src/pages/profile.html" aria-label="Log in"
-              >My page <i class="fa-regular fa-user"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <header id="header-container"></header>
     <main>
-      <section>
-        <div id="feed-top">
+      <section class="feed-container">
+        <div id="feed-top" class="feed-top">
           <form class="search-form" id="search-posts-form" role="search">
             <label for="feedSearchInput">Search posts</label>
             <div class="container_search_input-button">
@@ -48,25 +38,20 @@
               </div>
             </div>
           </form>
-
-          <div class="container_open-add-post-btn">
-            <button type="button" id="open-add-post" class="primary-btn">
-              Add post
-            </button>
-          </div>
+          <button type="button" id="open-add-post" class="primary-btn">
+            Add post
+          </button>
         </div>
         <div class="feed-grid" id="container"></div>
-        <button class="primary-btn" id="load-more-btn">Load More</button>
+        <div class="load-more-btn-container">
+          <button class="primary-btn" id="load-more-btn" class="load-more-btn">
+            Load More
+          </button>
+        </div>
       </section>
     </main>
     <footer>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/register.html">Register account</a></li>
-          <li><a href="/login.html">Log in</a></li>
-        </ul>
-      </nav>
+      <p>@Emilie Holden</p>
       <i class="fa-brands fa-square-facebook"></i>
       <i class="fa-brands fa-square-instagram"></i>
     </footer>
