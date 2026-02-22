@@ -14,12 +14,12 @@ export async function getProfiles() {
         return data;
 
     } catch (error) {
-        throw error;
+        console.error(error);
     }
 }
 
 export async function getProfile(name) {
-    const API_URL = `${BASE_URL}/profiles/${name}`
+    const API_URL = `${BASE_URL}/profiles/${name}?_followers=true`
 
     try {
         const response = await fetch(API_URL, {
@@ -32,7 +32,7 @@ export async function getProfile(name) {
         return data;
 
     } catch (error) {
-        throw error;
+        console.error(error);
     }
 }
 
@@ -50,7 +50,7 @@ export async function getProfilePosts(name) {
         return data;
 
     } catch (error) {
-        throw error;
+        console.error(error);
 
     }
 }

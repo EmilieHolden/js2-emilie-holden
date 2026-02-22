@@ -15,7 +15,7 @@ export async function getPosts(page = 1, limit = 10) {
         return data;
 
     } catch (error) {
-        throw error;
+        console.error(error);
     }
 }
 
@@ -35,12 +35,12 @@ export async function searchPosts(query, page = 1, limit = 10) {
         return data;
 
     } catch (error) {
-        throw error;
+        console.error(error);
     }
 }
 
 export async function getPost(id) {
-    const API_URL = `${BASE_URL}/posts/${id}&_author=true`
+    const API_URL = `${BASE_URL}/posts/${id}?_author=true&_count=true`
 
     try {
         const response = await fetch(API_URL, {
@@ -53,6 +53,6 @@ export async function getPost(id) {
         return data;
 
     } catch (error) {
-        throw error;
+        console.error(error)
     }
 }

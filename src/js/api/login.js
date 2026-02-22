@@ -18,6 +18,6 @@ export async function loginUser(userData) {
 
         return data;
     } catch (error) {
-        throw error;
+        console.error(error);
     }
 }
